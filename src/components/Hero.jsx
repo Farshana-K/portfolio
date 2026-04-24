@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import resume from '../assets/resume.pdf'
 
 const Hero = () => {
   return (
@@ -40,7 +41,7 @@ const Hero = () => {
           <a href="#work" className="btn btn-primary">
             View Work
           </a>
-          <a href="/resume.pdf" target="_blank" className="btn btn-secondary" rel="noreferrer">
+          <a href={ resume } target="_blank" className="btn btn-secondary" rel="noreferrer">
             Resume
           </a>
         </motion.div>
