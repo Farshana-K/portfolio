@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
@@ -7,22 +7,46 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
           <h2>
             About <span className="text-accent">Me</span>
           </h2>
 
-          <p style={{ marginTop: "20px" }}>
-            I am a passionate MERN Stack Developer with hands-on experience in
-            building full-stack web applications. I enjoy solving problems and
-            creating smooth user experiences.
+          <p
+            style={{
+              marginTop: '20px',
+              maxWidth: '800px',
+              lineHeight: 1.8,
+            }}
+          >
+            I am a Full Stack Developer with hands-on experience building and
+            deploying web applications using React, TypeScript, Node.js,
+            Express, and MongoDB.
           </p>
 
-          <p>
-            Currently, I am working on an E-commerce project with features like
-            authentication, admin dashboard, product management, and filtering
-            system using MongoDB, Express, and React.
+          <p
+            style={{
+              maxWidth: '800px',
+              lineHeight: 1.8,
+            }}
+          >
+            I enjoy turning ideas into practical applications, from
+            educational gaming platforms and e-commerce systems to article
+            management and PDF utilities. I am particularly interested in
+            backend development, problem solving, and building maintainable
+            software.
+          </p>
+
+          <p
+            style={{
+              maxWidth: '800px',
+              lineHeight: 1.8,
+            }}
+          >
+            I am continuously improving my skills through hands-on projects,
+            technical challenges, and real-world development experience.
           </p>
         </motion.div>
       </div>

@@ -1,23 +1,69 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
-      skills: ["React.js", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"]
+      title: 'Frontend',
+      skills: [
+        'React.js',
+        'TypeScript',
+        'JavaScript',
+        'HTML5',
+        'CSS3',
+        'Tailwind CSS',
+        'Redux Toolkit',
+        'Bootstrap',
+        'Framer Motion',
+      ],
     },
     {
-      title: "Backend",
-      skills: ["Node.js", "Express.js", "RESTful APIs", "Authentication (JWT, OTP)"]
+      title: 'Backend',
+      skills: [
+        'Node.js',
+        'Express.js',
+        'REST APIs',
+        'JWT',
+        'Authentication',
+        'Session Management',
+        'OTP Verification',
+      ],
     },
     {
-      title: "Database",
-      skills: ["MongoDB", "Mongoose", "SQL"]
+      title: 'Database',
+      skills: ['MongoDB', 'Mongoose', 'SQL'],
     },
     {
-      title: "Tools & Deployment",
-      skills: ["Git", "GitHub", "Vite", "NPM", "Vercel", "Postman", "Figma"]
-    }
+      title: 'Architecture & Concepts',
+      skills: [
+        'Clean Architecture',
+        'MVC',
+        'OOP',
+        'SOLID',
+        'Repository Pattern',
+        'Dependency Injection',
+        'DSA',
+      ],
+    },
+    {
+      title: 'AI',
+      skills: ['LangChain', 'Generative AI', 'AI Agents'],
+    },
+    {
+      title: 'Cloud & Deployment',
+      skills: [
+        'AWS',
+        'EC2',
+        'Azure',
+        'Nginx',
+        'PM2',
+        'Vercel',
+        'Render',
+      ],
+    },
+    {
+      title: 'Tools',
+      skills: ['Git', 'GitHub', 'Postman', 'Figma', 'Vite', 'NPM'],
+    },
   ];
 
   return (
@@ -27,32 +73,74 @@ const Skills = () => {
           className="section-title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
         >
-          Technical Skills.
+          Technical <span className="text-accent">Skills.</span>
         </motion.h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          style={{
+            maxWidth: '650px',
+            marginBottom: '3rem',
+          }}
+        >
+          Technologies and concepts I use to design, develop, and deploy
+          full-stack applications.
+        </motion.p>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1.5rem',
+          }}
+        >
           {skillCategories.map((category, idx) => (
             <motion.div
-              key={idx}
+              key={category.title}
               className="card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.05 }}
             >
-              <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-primary)', fontSize: '1.2rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
+              <h3
+                style={{
+                  marginBottom: '1.25rem',
+                  color: 'var(--text-primary)',
+                  fontSize: '1.15rem',
+                  borderBottom: '1px solid var(--border-color)',
+                  paddingBottom: '0.7rem',
+                }}
+              >
                 {category.title}
               </h3>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                {category.skills.map((skill, i) => (
-                  <li key={i} style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ width: '6px', height: '6px', background: 'var(--border-color)', borderRadius: '50%' }}></span>
+
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '8px',
+                }}
+              >
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    style={{
+                      background: 'var(--bg-tertiary)',
+                      padding: '7px 11px',
+                      borderRadius: '5px',
+                      fontSize: '0.85rem',
+                      color: 'var(--text-secondary)',
+                    }}
+                  >
                     {skill}
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>
